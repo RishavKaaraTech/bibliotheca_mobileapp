@@ -1,10 +1,15 @@
-import 'package:Link/ui/login_screen/view/login_screen.dart';
-import 'package:Link/ui/splash_screen/view/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:link/presentation/splash_screen/view/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  runApp(MaterialApp(
+    title: 'bibliotheca',
+    theme: ThemeData(
+      primarySwatch: Colors.blue,
+    ),
+    home: const SplashScreen(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -18,10 +23,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const SplashScreen(),
-      routes: {
-        '/login': (context) => const LoginScreen(),
-        // '/home': (context) => const YourHomeScreen(),
-      },
     );
   }
 }
