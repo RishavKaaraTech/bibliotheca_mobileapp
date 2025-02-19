@@ -1,5 +1,11 @@
+import 'package:link/domain/models/user.dart';
+
 class LoginScreenState {
   const LoginScreenState();
+}
+
+class LoginScreenInitialState extends LoginScreenState {
+  const LoginScreenInitialState();
 }
 
 class LoginScreenLoadingState extends LoginScreenState {
@@ -7,7 +13,9 @@ class LoginScreenLoadingState extends LoginScreenState {
 }
 
 class LoginScreenLoadedState extends LoginScreenState {
-  const LoginScreenLoadedState();
+  final User user;
+  final String token;
+  const LoginScreenLoadedState({required this.user, required this.token});
 }
 
 class LoginScreenErrorState extends LoginScreenState {
